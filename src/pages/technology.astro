@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+---
+<Base
+  title="Technology | QuSpin QTFM Gen-2 & DJI Matrice 300 | Magtech Surveys"
+  description="The sensors and platform behind our drone magnetic surveys: the QuSpin QTFM Gen-2 quantum magnetometer flown in a towed bird, and the DJI Matrice 300 RTK."
+>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">TECHNOLOGY</p>
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h1>Technology</h1>
+      <p class="lede">The sensor and platform behind the data.</p>
+
+      <h2>Magnetometer: QuSpin QTFM Gen-2</h2>
+      <div class="prose">
+        <p>
+          Our magnetic surveys are built around the QuSpin QTFM Gen-2, a pulsed, rubidium
+          optically pumped magnetometer. It is a second-generation sensor designed for
+          integration into compact unmanned aerial and underwater platforms, with a substantial
+          gain in robustness over the earlier G1.
+        </p>
+        <p>
+          Two design features matter most in the field. It holds sensitivity and stability in
+          noisy, rapidly changing magnetic environments, tolerating fast field changes without
+          losing lock. And its deadzone is a negligible axial cone rather than the large planar
+          deadzone of earlier sensors, so it operates cleanly across a wide range of orientations
+          and latitudes.
+        </p>
+        <p>
+          The sensor is inherently a total-field (scalar) instrument. An optional three-axis coil
+          attachment slides over the sensor head and applies known bias fields, from which the
+          vector components of the background field are calculated. We use this vector capability
+          for heading-error compensation via Tolles-Lawson modelling, not simply as a different
+          deliverable.
+        </p>
+      </div>
+
+      <!--
+        SPEC TABLE: figures below reflect QuSpin's current published QTFM Gen-2 specs
+        (quspin.com/qtfm-gen-2/, checked Aug 2026). QuSpin note that specs vary by sensor
+        version, firmware, vector option and interface hardware. Before publishing, confirm
+        these against the datasheet for YOUR actual unit and firmware. Update any that differ.
+      -->
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Sensor type</th><td>Pulsed rubidium optically pumped magnetometer (free induction decay)</td></tr>
+          <tr><th scope="row">Scalar sensitivity</th><td>&lt;5 pT/&radic;Hz (typical 3 pT/&radic;Hz)</td></tr>
+          <tr><th scope="row">Output data rate</th><td>Scalar up to 1000 Hz; triaxial vector up to 250 Hz</td></tr>
+          <tr><th scope="row">Operating range</th><td>1,000&ndash;150,000 nT (typical)</td></tr>
+          <tr><th scope="row">Deadzone</th><td>Negligible axial only, +/- 7&deg; cone</td></tr>
+          <tr><th scope="row">Slew rate</th><td>No slew-rate limitation; tolerates fast-changing fields without unlocking</td></tr>
+          <tr><th scope="row">Vector option</th><td>Add-on three-axis coil attachment, derived-vector output</td></tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <p>
+          The QTFM has been independently deployed and tested in peer-reviewed UAV magnetic
+          research, including a Technical University of Denmark study on sensor choice and bird
+          design for kilometre-scale UAV surveying, and a Universite Clermont Auvergne study
+          validating drone magnetic surveying for volcano monitoring against ground data. It is a
+          sensor with a track record in published geophysical work.
+        </p>
+        <p class="mono-list-wrap">
+          References:
+        </p>
+        <ul class="mono-list">
+          <li><a href="https://www.mdpi.com/2072-4292/13/4/649">Doessing et al. (2021), A High-Speed, Light-Weight Scalar Magnetometer Bird for km Scale UAV Magnetic Surveying, Remote Sensing.</a></li>
+          <li><a href="https://www.researchgate.net/publication/349663579_Validation_of_a_New_UAV_Magnetic_Prospecting_Tool_for_Volcano_Monitoring_and_Geohazard_Assessment">Validation of a New UAV Magnetic Prospecting Tool for Volcano Monitoring and Geohazard Assessment.</a></li>
+        </ul>
+      </div>
+
+      <h2>Towed bird</h2>
+      <div class="prose">
+        <p>
+          The magnetometer never flies on the airframe. It rides in a custom towed bird well
+          below the aircraft, which keeps the sensor away from the platform's motors, ESCs and
+          batteries, the dominant noise sources in close-mounted setups. The bridle geometry
+          constrains the bird's motion in flight, so the sensor tracks stably and any residual
+          heading behaviour is consistent and correctable in processing rather than random.
+        </p>
+      </div>
+
+      <h2>Platform: DJI Matrice 300 RTK</h2>
+      <div class="prose">
+        <p>
+          We fly the DJI Matrice 300 RTK. Long flight times and features such as obstacle
+          avoidance make it well suited to surveying large areas per sortie, and its rugged,
+          IP45-rated build lets us operate reliably in the conditions of the Australian outback.
+          It is an industry-standard platform for this work.
+        </p>
+      </div>
+    </div>
+  </section>
+  <Cta />
+</Base>

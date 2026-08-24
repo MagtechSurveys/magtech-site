@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <span class="ramp-rule ramp-rule--full" aria-hidden="true"></span>
+  <div class="wrap footer-inner">
+    <div>
+      <img class="foot-logo" src="/logo-white.svg" alt="Magtech Surveys" width="200" height="56" />
+      <p class="foot-meta">ABN 69 664 417 172<br />Perth, Western Australia<br />Servicing all Australian states and territories</p>
+    </div>
+    <div>
+      <p class="foot-meta">
+        <a href="/services/magnetics/">Drone magnetic surveys</a><br />
+        <a href="/services/lidar/">LiDAR surveys</a><br />
+        <a href="/services/photogrammetry/">Photogrammetry</a><br />
+        <a href="/services/environmental/">Environmental &amp; thermal</a>
+      </p>
+    </div>
+    <div>
+      <p class="foot-meta">
+        <a href="/technology/">Technology</a><br />
+        <a href="/case-studies/">Case studies</a><br />
+        <a href="/about/">About</a><br />
+        <a href="/contact/">Contact</a>
+      </p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="foot-fine">&copy; {year} Magtech Surveys Pty Ltd. CASA-certified operations (ReOC).</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--graphite); color: #cfd2d6; margin-top: 3rem; }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem;
+    padding-top: 2.2rem;
+    padding-bottom: 1rem;
+  }
+  .foot-logo { height: 45px; width: auto; display: block; margin-bottom: 0.8rem; }
+  .foot-meta { font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.9; }
+  .foot-meta a { color: #cfd2d6; }
+  .foot-meta a:hover { color: #fff; }
+  .foot-fine { font-family: var(--font-mono); font-size: 0.72rem; color: #9aa0a8; padding-bottom: 1.4rem; }
+</style>

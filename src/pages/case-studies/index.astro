@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year - a.data.year);
+---
+<Base
+  title="Case Studies | Drone Survey Projects Across Australia | Magtech Surveys"
+  description="Delivered drone magnetic, LiDAR and photogrammetry projects across Australia, with real data examples and methodology notes."
+>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">CASE STUDIES</p>
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h1>Delivered projects</h1>
+      <p class="lede">Real surveys, real data. Client and project identifiers withheld where confidentiality applies.</p>
+      <div class="card-grid">
+        {studies.map((s) => (
+          <article class="card">
+            <p class="eyebrow">{s.data.location} &middot; {s.data.year} &middot; {s.data.area}</p>
+            <h3>{s.data.title}</h3>
+            <p>{s.data.summary}</p>
+            <a class="card-link" href={`/case-studies/${s.id}/`}>Read case study &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

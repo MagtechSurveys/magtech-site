@@ -1,0 +1,59 @@
+---
+const links = [
+  { href: '/services/magnetics/', label: 'Magnetics' },
+  { href: '/services/lidar/', label: 'LiDAR' },
+  { href: '/services/photogrammetry/', label: 'Photogrammetry' },
+  { href: '/services/environmental/', label: 'Environmental' },
+  { href: '/technology/', label: 'Technology' },
+  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/about/', label: 'About' },
+];
+---
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Magtech Surveys home">
+      <img src="/logo-white.svg" alt="Magtech Surveys" width="200" height="56" />
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+        <li><a class="nav-cta" href="/contact/">Get a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+  <span class="ramp-rule ramp-rule--full" aria-hidden="true"></span>
+</header>
+
+<style>
+  .site-header { background: var(--graphite); }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+  .brand { display: inline-flex; align-items: center; line-height: 0; }
+  .brand img { height: 45px; width: auto; display: block; }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: #cfd2d6;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+  nav a:hover { color: #fff; }
+  .nav-cta { color: #fff; border: 1px solid #7d838b; padding: 0.3rem 0.7rem; }
+  .nav-cta:hover { background: var(--signal); border-color: var(--signal); }
+</style>

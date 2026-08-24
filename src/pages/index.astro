@@ -1,0 +1,187 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year - a.data.year);
+---
+<Base
+  title="Drone Magnetic Surveys, LiDAR & Photogrammetry | Magtech Surveys, Perth WA"
+  description="High-resolution drone magnetic, LiDAR and photogrammetry surveys for mineral exploration and environmental projects across Australia. Planned, flown and processed in-house. Perth-based, servicing all states."
+>
+  <section class="hero">
+    <svg class="flightlines" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+      {Array.from({ length: 24 }).map((_, i) => (
+        <line x1={60 + i * 48} y1="0" x2={60 + i * 48} y2="420" stroke="#43474d" stroke-width="1" opacity="0.35" />
+      ))}
+      <line x1="0" y1="90" x2="1200" y2="90" stroke="#43474d" stroke-width="1" opacity="0.5" />
+      <line x1="0" y1="330" x2="1200" y2="330" stroke="#43474d" stroke-width="1" opacity="0.5" />
+    </svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">UAV GEOPHYSICS &middot; PERTH, WESTERN AUSTRALIA</p>
+      <h1>Magnetic data at a resolution manned aircraft can't fly.</h1>
+      <p class="hero-lede">
+        We fly quantum-sensor drone magnetic surveys, LiDAR and photogrammetry for mineral
+        exploration and environmental projects across Australia. Low, slow and tightly spaced.
+        Every survey is planned, flown and processed in-house, and every dataset is delivered
+        ready for geological interpretation.
+      </p>
+      <div class="hero-specs" role="list">
+        <div role="listitem"><span>SENSOR</span>QuSpin QTFM Gen-2</div>
+        <div role="listitem"><span>LINE SPACING</span>10&ndash;100 m</div>
+        <div role="listitem"><span>SENSOR HEIGHT</span>As low as 25 m AGL</div>
+        <div role="listitem"><span>DELIVERABLES</span>GRD &middot; GeoTIFF &middot; PDF</div>
+      </div>
+      <p class="hero-actions">
+        <a class="btn" href="/contact/">Request a quote</a>
+        <a class="btn btn--ghost hero-ghost" href="/case-studies/">See recent work</a>
+      </p>
+    </div>
+    <span class="ramp-rule ramp-rule--full" aria-hidden="true"></span>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h2>Services</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Drone magnetic surveys</h3>
+          <p>High-resolution aeromagnetics for greenfields reconnaissance, structural and lithological mapping, and detailed prospect definition. Towed quantum magnetometer, full processing chain from diurnal correction through microlevelling, RTP and 1VD.</p>
+          <a class="card-link" href="/services/magnetics/">Magnetics &rarr;</a>
+        </article>
+        <article class="card">
+          <h3>LiDAR surveys</h3>
+          <p>Survey-grade terrain and canopy mapping. Ground-classified point clouds, DEMs, DSMs and contours for exploration logistics, earthworks and vegetation assessment.</p>
+          <a class="card-link" href="/services/lidar/">LiDAR &rarr;</a>
+        </article>
+        <article class="card">
+          <h3>Photogrammetry</h3>
+          <p>Orthomosaics, 3D models and volumetrics from 20-megapixel capture. Pit and stockpile surveys, site records and visual baselines, typically delivered within 24 to 72 hours.</p>
+          <a class="card-link" href="/services/photogrammetry/">Photogrammetry &rarr;</a>
+        </article>
+        <article class="card">
+          <h3>Environmental &amp; thermal</h3>
+          <p>Rehabilitation monitoring, vegetation and canopy mapping, and thermal detection of feral animals. Repeatable survey designs that make successive datasets directly comparable.</p>
+          <a class="card-link" href="/services/environmental/">Environmental &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h2>Why drone-based survey</h2>
+      <p class="lede">Drone surveys sit between traditional ground methods and larger-scale manned airborne work.</p>
+      <div class="prose">
+        <p>
+          They give high coverage per day, safe access to rugged or remote terrain, and a low
+          environmental footprint. Most of all, they fly close enough to the ground to resolve
+          detail that higher-altitude surveys smooth over. A well-planned survey at low altitude
+          resolves the geological, topographic or environmental features of interest with enough
+          detail to support targeting, mapping and monitoring.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div>
+          <h3>Resolution</h3>
+          <p>Sensor heights as low as 25 m above ground with line spacing down to 10 m resolve near-surface structure that regional government data and conventional fixed-wing surveys average out.</p>
+        </div>
+        <div>
+          <h3>Right-sized for your project</h3>
+          <p>Manned aircraft mobilisation makes programs under about 50 square kilometres expensive per line-kilometre. We are built and priced for exactly that range, from single prospects up.</p>
+        </div>
+        <div>
+          <h3>Honest data, disclosed limits</h3>
+          <p>Every step is documented, and we tell you what the method can and can't resolve before you commit. Where drone survey isn't the right tool, we say so.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h2>Who we work with</h2>
+      <div class="audience-grid">
+        <div>
+          <h3>Mineral exploration &amp; resources</h3>
+          <p>
+            Aeromagnetic surveys for greenfields reconnaissance, lithological and structural
+            mapping, and detailed prospect definition. LiDAR and photogrammetry support
+            exploration logistics, pit and stockpile surveys, and site documentation.
+          </p>
+        </div>
+        <div>
+          <h3>Environmental &amp; land management</h3>
+          <p>
+            Vegetation structure and canopy height mapping, bare-earth terrain models beneath
+            canopy, orthomosaics for baseline assessment, and thermal imagery for wildlife
+            survey, feral animal detection and rehabilitation monitoring. Repeatable designs
+            give quantitative evidence of change over time.
+          </p>
+        </div>
+        <div>
+          <h3>Infrastructure, civil &amp; government</h3>
+          <p>
+            Topographic survey, drainage and hydrology modelling, erosion mapping, asset and
+            corridor inspection, and high-resolution site capture for engineering, planning and
+            compliance work.
+          </p>
+        </div>
+      </div>
+      <p class="prose">
+        Where a project sits outside these examples, we can usually advise whether drone-based
+        survey is the right tool and what it can realistically deliver.
+      </p>
+    </div>
+  </section>
+
+  {studies.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <span class="ramp-rule" aria-hidden="true"></span>
+        <h2>Recent work</h2>
+        <div class="card-grid">
+          {studies.slice(0, 3).map((s) => (
+            <article class="card">
+              <p class="eyebrow">{s.data.location} &middot; {s.data.year}</p>
+              <h3>{s.data.title}</h3>
+              <p>{s.data.summary}</p>
+              <a class="card-link" href={`/case-studies/${s.id}/`}>Read case study &rarr;</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Cta />
+</Base>
+
+<style>
+  .hero { position: relative; background: var(--graphite); color: #fff; overflow: hidden; }
+  .flightlines { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-inner { position: relative; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .hero h1 { color: #fff; max-width: 44rem; }
+  .hero .eyebrow { color: #9aa0a8; }
+  .hero-lede { max-width: 40rem; font-size: 1.15rem; color: #d6d9dd; }
+  .hero-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    margin: 1.8rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #fff;
+  }
+  .hero-specs span { display: block; font-size: 0.65rem; letter-spacing: 0.14em; color: #9aa0a8; margin-bottom: 0.15rem; }
+  .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .hero .btn { border-color: #fff; background: #fff; color: var(--graphite); }
+  .hero .btn:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+  .hero .hero-ghost { background: transparent; color: #fff; border-color: #9aa0a8; }
+  .hero .hero-ghost:hover { background: #fff; color: var(--graphite); border-color: #fff; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+  .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+</style>

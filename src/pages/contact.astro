@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Contact | Request a Quote | Magtech Surveys"
+  description="Contact Magtech Surveys for enquiries, quotes, scheduling or technical information on drone magnetic, LiDAR, photogrammetry and environmental surveys across Australia."
+>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">CONTACT</p>
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h1>Contact</h1>
+      <p class="lede">
+        For enquiries, quotes, scheduling or technical information, use the details below or the
+        form. We are happy to discuss your project requirements and will respond promptly.
+      </p>
+
+      <div class="contact-details">
+        <div>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <p class="contact-lines">
+            <a href="mailto:info@magtechsurveys.com.au">info@magtechsurveys.com.au</a><br />
+            <a href="tel:+61475981432">+61 475 981 432</a><br />
+            <a href="https://www.linkedin.com/company/magtech-surveys/">LinkedIn</a>
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">KEY CONTACT</p>
+          <p class="contact-lines">
+            Calvin Atkinson, Director<br />
+            <a href="mailto:calvin@magtechsurveys.com.au">calvin@magtechsurveys.com.au</a>
+          </p>
+        </div>
+      </div>
+
+      <h2>Send an enquiry</h2>
+      <p class="prose">
+        A tenement ID, KML or shapefile speeds up quoting. Tell us the site, the rough area and
+        the deliverables you need.
+      </p>
+
+      <!--
+        Form posts to Web3Forms (free tier). Replace YOUR_ACCESS_KEY with the key
+        from web3forms.com. Alternative: swap to a Cloudflare Pages Function later.
+      -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="form-grid">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="Quote request via magtechsurveys.com.au" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Magnetic survey</option>
+            <option>LiDAR</option>
+            <option>Photogrammetry</option>
+            <option>Environmental / thermal</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Location, approximate area, timing, and the deliverables you need."></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit">Send enquiry</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .contact-lines { font-family: var(--font-mono); font-size: 0.9rem; line-height: 2; }
+</style>

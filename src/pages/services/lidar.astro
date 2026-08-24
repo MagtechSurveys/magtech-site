@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+---
+<Base
+  title="Drone LiDAR Surveys WA & Australia | DEMs, Contours, Point Clouds | Magtech Surveys"
+  description="Drone LiDAR surveys for exploration logistics, earthworks, vegetation and terrain mapping across Australia. Ground-classified point clouds, bare-earth DEMs, DSMs and contours with CORS-controlled positioning."
+>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">SERVICES / LIDAR</p>
+      <span class="ramp-rule" aria-hidden="true"></span>
+      <h1>LiDAR surveys</h1>
+      <p class="lede">Survey-grade terrain and canopy mapping, from single sites to multi-tenement programs.</p>
+
+      <div class="prose">
+        <p>
+          LiDAR measures the ground directly, with enough pulses finding gaps in the canopy to
+          map the surface beneath vegetation. That makes it the right tool where photogrammetry
+          struggles: under canopy, over low-texture surfaces, and anywhere a true bare-earth
+          terrain model matters. We fly it for exploration access and
+          logistics planning, drill pad and earthworks design, drainage and hydrology, and
+          vegetation structure mapping.
+        </p>
+        <p>
+          Positioning is controlled by GNSS post-processing against CORS reference stations,
+          giving reliable absolute accuracy even at remote sites with no established survey
+          control. Point clouds are ground-classified and delivered with the derived products
+          your engineers or geologists actually use.
+        </p>
+      </div>
+
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Typical accuracy</th><td>~5 cm absolute, 2&ndash;3 cm relative (surface and conditions dependent)</td></tr>
+          <tr><th scope="row">Point density</th><td>Matched to purpose; we do not sell density beyond what improves accuracy</td></tr>
+          <tr><th scope="row">Positioning</th><td>RTK with CORS post-processed control for remote sites</td></tr>
+          <tr><th scope="row">Deliverables</th><td>Classified LAS/LAZ point cloud, bare-earth DEM, DSM, contours, hillshade. GeoTIFF and CAD-ready formats. GDA2020.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>LiDAR or photogrammetry?</h2>
+      <div class="prose">
+        <p>
+          They overlap, and we quote whichever suits the job rather than the one with the higher
+          price. As a rule: vegetation, bare-earth terrain models or uniform surfaces like mown
+          turf point to LiDAR. Visual records, orthomosaics and stockpile volumetrics on
+          well-textured ground point to photogrammetry. If you are not sure, describe the end
+          product you need and we will recommend the method, including telling you if the cheaper
+          one is enough.
+        </p>
+      </div>
+    </div>
+  </section>
+  <Cta />
+</Base>
