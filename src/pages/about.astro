@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Cta from '../components/Cta.astro';
+import { Image } from 'astro:assets';
+import surveyUte from '../assets/surveyute.jpg';
 ---
 <Base
   title="About Magtech Surveys | UAV Geophysics & Mapping, Perth WA"
@@ -27,13 +29,18 @@ import Cta from '../components/Cta.astro';
         </p>
       </div>
 
+      <figure class="media">
+        <Image src={surveyUte} width={1300} alt="The Magtech Surveys field vehicle at a remote survey site" />
+        <figcaption>Field-ready for remote-area work across WA and interstate.</figcaption>
+      </figure>
+
       <h2>How we work</h2>
       <div class="prose">
         <p>
           Every dataset is acquired, processed and quality-controlled in-house. Clients deal
           directly with the people responsible for their project, from survey design through to
-          delivery. We work at any stage, from initial scoping, where we help define survey
-          parameters and feasibility, through to acquisition, processing and delivery. Where
+          delivery. We can come in at any stage, from initial scoping, where we help define
+          survey parameters and feasibility, right through to acquisition and processing. Where
           useful, we collaborate with consulting geophysicists, environmental specialists and
           surveyors so the data fits how it will actually be used.
         </p>
@@ -43,7 +50,6 @@ import Cta from '../components/Cta.astro';
         <tbody>
           <tr><th scope="row">Certification</th><td>CASA ReOC, Chief Remote Pilot, insured operations</td></tr>
           <tr><th scope="row">Methodology</th><td>Inter-Society Committee on UAV Geophysics Guidelines; every processing step documented</td></tr>
-          <tr><th scope="row">Quoting</th><td>Fixed, itemised quotes with mobilisation as a visible separate line. Milestone invoicing.</td></tr>
           <tr><th scope="row">Environment</th><td>Wildlife-aware flight planning, minimal ground disturbance, no vehicle tracks off existing access</td></tr>
           <tr><th scope="row">Coverage</th><td>Based in Perth, WA. Servicing all Australian states and territories; clustered mobilisation available for multi-site programs.</td></tr>
         </tbody>

@@ -4,7 +4,7 @@ location: "Charters Towers region, QLD"
 services: ["Drone magnetic survey", "LiDAR"]
 area: "6.9 km²"
 year: 2026
-summary: "Combined aeromagnetic and LiDAR program delivered as a single mobilisation, with CORS-controlled positioning at a remote site."
+summary: "Combined aeromagnetic and LiDAR program delivered in a single mobilisation, with RTK base station and ground control positioning."
 ---
 
 An exploration client needed both high-resolution magnetics and a detailed terrain
@@ -16,13 +16,12 @@ delivered as GRD, GeoTIFF and georeferenced PDF products with a complete survey
 report and data dictionary.
 
 **LiDAR.** Sixteen capture sessions across the project area. Absolute positioning was
-controlled by post-processing each GNSS base observation against the nearest CORS
-station, eliminating the session-to-session offsets that self-surveyed base positions
-introduce at remote sites. The result: a seamless, ground-classified point cloud and
-derived terrain products across the full area.
+controlled with an on-site RTK base station and a network of surveyed ground control
+points, tying every session to a common datum and eliminating the session-to-session
+offsets that uncontrolled base positions introduce. The result: a seamless,
+ground-classified point cloud and derived terrain products across the full area.
 
-**Why it matters.** Multi-session drone LiDAR at remote sites fails quietly when base
-station positioning is not controlled. Our CORS post-processing workflow is standard
-on every remote job, not an optional extra.
+**Why it matters.** Multi-session drone LiDAR fails quietly when base station and
+ground control are not handled rigorously. Tight survey control is standard on our
+jobs, not an optional extra.
 
-*Add figures: hillshade DEM crop and a TMI or RTP grid crop, no coordinates.*

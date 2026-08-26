@@ -1,6 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import Cta from '../components/Cta.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/magbirdinflightfromdronecam.jpg';
+import launchShot from '../assets/launchingdroneatcamp.jpg';
+import svcMag from '../assets/samplesurvey2.png';
+import svcLidar from '../assets/lidarDEM.png';
+import svcPhoto from '../assets/goldminepitfromorthosurvey.png';
+import svcEnv from '../assets/nicelandscapesfromorthosurvey.png';
 import { getCollection } from 'astro:content';
 
 const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year - a.data.year);
@@ -10,13 +17,8 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
   description="High-resolution drone magnetic, LiDAR and photogrammetry surveys for mineral exploration and environmental projects across Australia. Planned, flown and processed in-house. Perth-based, servicing all states."
 >
   <section class="hero">
-    <svg class="flightlines" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
-      {Array.from({ length: 24 }).map((_, i) => (
-        <line x1={60 + i * 48} y1="0" x2={60 + i * 48} y2="420" stroke="#43474d" stroke-width="1" opacity="0.35" />
-      ))}
-      <line x1="0" y1="90" x2="1200" y2="90" stroke="#43474d" stroke-width="1" opacity="0.5" />
-      <line x1="0" y1="330" x2="1200" y2="330" stroke="#43474d" stroke-width="1" opacity="0.5" />
-    </svg>
+    <Image class="hero-bg" src={heroBg} width={2560} alt="" aria-hidden="true" />
+    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <p class="eyebrow">UAV GEOPHYSICS &middot; PERTH, WESTERN AUSTRALIA</p>
       <h1>Magnetic data at a resolution manned aircraft can't fly.</h1>
@@ -27,10 +29,11 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
         ready for geological interpretation.
       </p>
       <div class="hero-specs" role="list">
-        <div role="listitem"><span>SENSOR</span>QuSpin QTFM Gen-2</div>
-        <div role="listitem"><span>LINE SPACING</span>10&ndash;100 m</div>
-        <div role="listitem"><span>SENSOR HEIGHT</span>As low as 25 m AGL</div>
-        <div role="listitem"><span>DELIVERABLES</span>GRD &middot; GeoTIFF &middot; PDF</div>
+        <div role="listitem"><span>SENSITIVITY</span>3 pT/&radic;Hz typ.</div>
+        <div role="listitem"><span>SENSOR HEIGHT</span>As low as the site allows</div>
+        <div role="listitem"><span>COVERAGE</span>Up to 230 line-km/day</div>
+        <div role="listitem"><span>SURVEY SIZE</span>Prospect to regional</div>
+        <div role="listitem"><span>CERTIFICATION</span>CASA ReOC</div>
       </div>
       <p class="hero-actions">
         <a class="btn" href="/contact/">Request a quote</a>
@@ -40,27 +43,32 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
     <span class="ramp-rule ramp-rule--full" aria-hidden="true"></span>
   </section>
 
+
   <section class="section">
     <div class="wrap">
       <span class="ramp-rule" aria-hidden="true"></span>
       <h2>Services</h2>
       <div class="card-grid">
         <article class="card">
+          <Image class="card-img" src={svcMag} alt="Total magnetic intensity grid from a drone survey" />
           <h3>Drone magnetic surveys</h3>
           <p>High-resolution aeromagnetics for greenfields reconnaissance, structural and lithological mapping, and detailed prospect definition. Towed quantum magnetometer, full processing chain from diurnal correction through microlevelling, RTP and 1VD.</p>
           <a class="card-link" href="/services/magnetics/">Magnetics &rarr;</a>
         </article>
         <article class="card">
+          <Image class="card-img" src={svcLidar} alt="Bare-earth DEM hillshade from a drone LiDAR survey" />
           <h3>LiDAR surveys</h3>
           <p>Survey-grade terrain and canopy mapping. Ground-classified point clouds, DEMs, DSMs and contours for exploration logistics, earthworks and vegetation assessment.</p>
           <a class="card-link" href="/services/lidar/">LiDAR &rarr;</a>
         </article>
         <article class="card">
+          <Image class="card-img" src={svcPhoto} alt="High-resolution orthomosaic of an open pit from drone photogrammetry" />
           <h3>Photogrammetry</h3>
           <p>Orthomosaics, 3D models and volumetrics from 20-megapixel capture. Pit and stockpile surveys, site records and visual baselines, typically delivered within 24 to 72 hours.</p>
           <a class="card-link" href="/services/photogrammetry/">Photogrammetry &rarr;</a>
         </article>
         <article class="card">
+          <Image class="card-img" src={svcEnv} alt="Orthomosaic over vegetated terrain from a drone survey" />
           <h3>Environmental &amp; thermal</h3>
           <p>Rehabilitation monitoring, vegetation and canopy mapping, and thermal detection of feral animals. Repeatable survey designs that make successive datasets directly comparable.</p>
           <a class="card-link" href="/services/environmental/">Environmental &rarr;</a>
@@ -83,14 +91,18 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
           detail to support targeting, mapping and monitoring.
         </p>
       </div>
+      <figure class="media">
+        <Image src={launchShot} width={1300} alt="Launching the survey drone in the field, sensor and platform ready" />
+        <figcaption>In the field: launching the survey drone at a remote site.</figcaption>
+      </figure>
       <div class="why-grid">
         <div>
           <h3>Resolution</h3>
-          <p>Sensor heights as low as 25 m above ground with line spacing down to 10 m resolve near-surface structure that regional government data and conventional fixed-wing surveys average out.</p>
+          <p>Sensor heights of 25 m and lower with line spacing down to 10 m resolve near-surface structure that regional government data and conventional fixed-wing surveys average out.</p>
         </div>
         <div>
           <h3>Right-sized for your project</h3>
-          <p>Manned aircraft mobilisation makes programs under about 50 square kilometres expensive per line-kilometre. We are built and priced for exactly that range, from single prospects up.</p>
+          <p>Manned aircraft carry a heavy mobilisation cost that makes smaller programs expensive per line-kilometre. We are priced to work from a single prospect up to broad regional coverage.</p>
         </div>
         <div>
           <h3>Honest data, disclosed limits</h3>
@@ -162,8 +174,11 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
 
 <style>
   .hero { position: relative; background: var(--graphite); color: #fff; overflow: hidden; }
-  .flightlines { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .hero-inner { position: relative; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+  .hero-scrim { position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg, rgba(22,24,28,0.94) 0%, rgba(22,24,28,0.78) 42%, rgba(22,24,28,0.45) 100%); }
+  .hero-inner { position: relative; z-index: 2; padding-top: 5rem; padding-bottom: 5rem; }
+  .hero .ramp-rule--full { position: relative; z-index: 2; }
   .hero h1 { color: #fff; max-width: 44rem; }
   .hero .eyebrow { color: #9aa0a8; }
   .hero-lede { max-width: 40rem; font-size: 1.15rem; color: #d6d9dd; }
@@ -184,4 +199,5 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
   .hero .hero-ghost:hover { background: #fff; color: var(--graphite); border-color: #fff; }
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
   .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+  .card-img { width: 100%; height: 150px; object-fit: cover; display: block; margin: -1.4rem -1.4rem 0.9rem; width: calc(100% + 2.8rem); border-bottom: 1px solid var(--rule); }
 </style>

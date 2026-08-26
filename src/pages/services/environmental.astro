@@ -1,6 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
+import { Image } from 'astro:assets';
+import vegOrtho from '../../assets/nicelandscapesfromorthosurvey.png';
+import satView from '../../assets/satviewofnicelandscapes.png';
+import aerialCamp from '../../assets/aerialshotofcamp.jpg';
 ---
 <Base
   title="Aerial Environmental Monitoring | Rehabilitation, Vegetation, Thermal | Magtech Surveys"
@@ -36,6 +40,21 @@ import Cta from '../../components/Cta.astro';
           tenement access are familiar ground.
         </p>
       </div>
+
+      <figure class="media">
+        <Image src={vegOrtho} alt="High-resolution orthomosaic over vegetated terrain from a drone survey, for baseline and change detection" />
+        <figcaption>Orthomosaic over vegetated terrain. Repeat capture at this detail supports baseline and change detection.</figcaption>
+      </figure>
+
+      <figure class="media media--feature">
+        <Image src={aerialCamp} width={2000} alt="Aerial view over remote bushland during a drone survey, vehicle and launch pad among the trees" />
+        <figcaption>On site in remote bushland: the survey setup from above.</figcaption>
+      </figure>
+
+      <figure class="media">
+        <Image src={satView} alt="Broad-area aerial view of vegetated landscape captured by drone survey" />
+        <figcaption>Broad-area capture for landscape-scale baseline and monitoring work.</figcaption>
+      </figure>
 
       <table class="spec">
         <tbody>

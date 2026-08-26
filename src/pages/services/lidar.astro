@@ -1,10 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
+import { Image } from 'astro:assets';
+import lidarDem from '../../assets/lidarDEM.png';
+import lidarSetup from '../../assets/charterstowerlidarsetup.jpg';
+import accessTracks from '../../assets/accesstrackscenary.jpg';
 ---
 <Base
   title="Drone LiDAR Surveys WA & Australia | DEMs, Contours, Point Clouds | Magtech Surveys"
-  description="Drone LiDAR surveys for exploration logistics, earthworks, vegetation and terrain mapping across Australia. Ground-classified point clouds, bare-earth DEMs, DSMs and contours with CORS-controlled positioning."
+  description="Drone LiDAR surveys for exploration logistics, earthworks, vegetation and terrain mapping across Australia. Ground-classified point clouds, bare-earth DEMs, DSMs and contours with RTK base station and ground control positioning."
 >
   <section class="section">
     <div class="wrap">
@@ -23,21 +27,37 @@ import Cta from '../../components/Cta.astro';
           vegetation structure mapping.
         </p>
         <p>
-          Positioning is controlled by GNSS post-processing against CORS reference stations,
-          giving reliable absolute accuracy even at remote sites with no established survey
-          control. Point clouds are ground-classified and delivered with the derived products
-          your engineers or geologists actually use.
+          Positioning is controlled with an on-site RTK base station and surveyed ground
+          control points, with CORS post-processing where site conditions call for it, giving
+          reliable absolute accuracy even at remote sites with no established survey control.
+          Point clouds are ground-classified and delivered with the derived products your
+          engineers or geologists actually use.
         </p>
       </div>
+
+      <figure class="media">
+        <Image src={lidarDem} alt="Bare-earth digital elevation model hillshade from a drone LiDAR survey, showing fine terrain and drainage detail" />
+        <figcaption>Bare-earth DEM hillshade from a drone LiDAR survey. Ground surface and drainage resolved beneath vegetation.</figcaption>
+      </figure>
+
+      <figure class="media">
+        <Image src={accessTracks} width={1300} alt="Remote exploration access tracks through scrub, mapped for logistics planning" />
+        <figcaption>Terrain and access mapping supports exploration logistics in remote country.</figcaption>
+      </figure>
 
       <table class="spec">
         <tbody>
           <tr><th scope="row">Typical accuracy</th><td>~5 cm absolute, 2&ndash;3 cm relative (surface and conditions dependent)</td></tr>
           <tr><th scope="row">Point density</th><td>Matched to purpose; we do not sell density beyond what improves accuracy</td></tr>
-          <tr><th scope="row">Positioning</th><td>RTK with CORS post-processed control for remote sites</td></tr>
+          <tr><th scope="row">Positioning</th><td>On-site RTK base station and ground control points; CORS post-processing where appropriate</td></tr>
           <tr><th scope="row">Deliverables</th><td>Classified LAS/LAZ point cloud, bare-earth DEM, DSM, contours, hillshade. GeoTIFF and CAD-ready formats. GDA2020.</td></tr>
         </tbody>
       </table>
+
+      <figure class="media">
+        <Image src={lidarSetup} width={1300} alt="Drone and LiDAR payload set up beside the survey vehicle in the field" />
+        <figcaption>LiDAR payload and platform, field setup.</figcaption>
+      </figure>
 
       <h2>LiDAR or photogrammetry?</h2>
       <div class="prose">

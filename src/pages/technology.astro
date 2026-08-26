@@ -1,6 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Cta from '../components/Cta.astro';
+import { Image } from 'astro:assets';
+import magBird from '../assets/closeupofmagbird.jpg';
+import qtfm from '../assets/hero-qtfm.jpg';
+import m300 from '../assets/dji-matrice-300.png';
+import magBirdFlight from '../assets/magbirdinflight.jpg';
 ---
 <Base
   title="Technology | QuSpin QTFM Gen-2 & DJI Matrice 300 | Magtech Surveys"
@@ -35,23 +40,51 @@ import Cta from '../components/Cta.astro';
           for heading-error compensation via Tolles-Lawson modelling, not simply as a different
           deliverable.
         </p>
+        <figure class="media media--feature">
+          <Image src={qtfm} alt="The QuSpin QTFM Gen-2 total-field quantum magnetometer, sensor head and electronics control unit" />
+          <figcaption>The QuSpin QTFM Gen-2 scalar quantum magnetometer.</figcaption>
+        </figure>
       </div>
 
-      <!--
-        SPEC TABLE: figures below reflect QuSpin's current published QTFM Gen-2 specs
-        (quspin.com/qtfm-gen-2/, checked Aug 2026). QuSpin note that specs vary by sensor
-        version, firmware, vector option and interface hardware. Before publishing, confirm
-        these against the datasheet for YOUR actual unit and firmware. Update any that differ.
-      -->
+      <h3>Specifications</h3>
+      <p class="prose">Manufacturer's published specifications for the QTFM Gen-2. Figures vary by sensor version, firmware and configuration.</p>
+
+      <p class="eyebrow">MEASUREMENT PERFORMANCE</p>
       <table class="spec">
         <tbody>
-          <tr><th scope="row">Sensor type</th><td>Pulsed rubidium optically pumped magnetometer (free induction decay)</td></tr>
-          <tr><th scope="row">Scalar sensitivity</th><td>&lt;5 pT/&radic;Hz (typical 3 pT/&radic;Hz)</td></tr>
-          <tr><th scope="row">Output data rate</th><td>Scalar up to 1000 Hz; triaxial vector up to 250 Hz</td></tr>
-          <tr><th scope="row">Operating range</th><td>1,000&ndash;150,000 nT (typical)</td></tr>
-          <tr><th scope="row">Deadzone</th><td>Negligible axial only, +/- 7&deg; cone</td></tr>
-          <tr><th scope="row">Slew rate</th><td>No slew-rate limitation; tolerates fast-changing fields without unlocking</td></tr>
-          <tr><th scope="row">Vector option</th><td>Add-on three-axis coil attachment, derived-vector output</td></tr>
+          <tr><th scope="row">Magnetometer type</th><td>Pulsed rubidium total-field</td></tr>
+          <tr><th scope="row">Measurement method</th><td>Free induction decay</td></tr>
+          <tr><th scope="row">Scalar sensitivity</th><td>&lt;5 pT/&radic;Hz (typ. 3 pT/&radic;Hz)</td></tr>
+          <tr><th scope="row">Derived-vector sensitivity</th><td>&lt;0.1 nT/&radic;Hz, optional</td></tr>
+          <tr><th scope="row">Output data rate</th><td>Scalar &le;1000 Hz; triaxial &le;250 Hz</td></tr>
+          <tr><th scope="row">Bandwidth</th><td>Up to 500 Hz</td></tr>
+          <tr><th scope="row">Operating range</th><td>1,000&ndash;150,000 nT typ.</td></tr>
+          <tr><th scope="row">Heading error</th><td>&lt;3 nT, uncompensated</td></tr>
+          <tr><th scope="row">Dead zone</th><td>Axial cone, &lt;&plusmn;7&deg; (typ. &lt;5&deg;)</td></tr>
+          <tr><th scope="row">Slew rate limit</th><td>None</td></tr>
+          <tr><th scope="row">Maximum field gradient</th><td>Approximately 300 nT/cm</td></tr>
+          <tr><th scope="row">Operating temperature</th><td>&minus;15 to +55 &deg;C</td></tr>
+        </tbody>
+      </table>
+
+      <p class="eyebrow">PHYSICAL</p>
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Sensor head</th><td>17.7 &times; 19.8 &times; 35.8 mm</td></tr>
+          <tr><th scope="row">Electronics control unit</th><td>14.7 &times; 24.4 &times; 92.3 mm</td></tr>
+          <tr><th scope="row">Weight</th><td>12 g sensor head + 29 g ECU (6.5 g without housing)</td></tr>
+        </tbody>
+      </table>
+
+      <p class="eyebrow">ELECTRICAL &amp; COMMUNICATION</p>
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Input power</th><td>+5 V via Standard Comms Board, or 10&ndash;12 V</td></tr>
+          <tr><th scope="row">Operating power</th><td>Approximately 2.5 W</td></tr>
+          <tr><th scope="row">Startup power</th><td>Approximately 3.5 W</td></tr>
+          <tr><th scope="row">Digital communication</th><td>UART; USB via Standard Comms Board</td></tr>
+          <tr><th scope="row">Filtering</th><td>Programmable onboard digital filtering</td></tr>
+          <tr><th scope="row">Calibration</th><td>None required</td></tr>
         </tbody>
       </table>
 
@@ -59,7 +92,7 @@ import Cta from '../components/Cta.astro';
         <p>
           The QTFM has been independently deployed and tested in peer-reviewed UAV magnetic
           research, including a Technical University of Denmark study on sensor choice and bird
-          design for kilometre-scale UAV surveying, and a Universite Clermont Auvergne study
+          design for kilometre-scale UAV surveying, and a Universit&eacute; Clermont Auvergne study
           validating drone magnetic surveying for volcano monitoring against ground data. It is a
           sensor with a track record in published geophysical work.
         </p>
@@ -81,6 +114,14 @@ import Cta from '../components/Cta.astro';
           constrains the bird's motion in flight, so the sensor tracks stably and any residual
           heading behaviour is consistent and correctable in processing rather than random.
         </p>
+        <figure class="media">
+          <Image src={magBird} width={1300} alt="The QuSpin magnetometer bird in flight, towed below the drone on a long line" />
+          <figcaption>The magnetometer bird in flight, towed well below the aircraft.</figcaption>
+        </figure>
+        <figure class="media">
+          <Image src={magBirdFlight} width={1300} alt="The drone in flight towing the magnetometer bird on a long line below it" />
+          <figcaption>In survey flight: the sensor tracks well below and behind the drone.</figcaption>
+        </figure>
       </div>
 
       <h2>Platform: DJI Matrice 300 RTK</h2>
@@ -91,6 +132,10 @@ import Cta from '../components/Cta.astro';
           IP45-rated build lets us operate reliably in the conditions of the Australian outback.
           It is an industry-standard platform for this work.
         </p>
+        <figure class="media media--grid">
+          <Image src={m300} alt="The DJI Matrice 300 RTK survey drone" />
+          <figcaption>The DJI Matrice 300 RTK, our survey platform.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

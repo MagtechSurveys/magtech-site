@@ -198,3 +198,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Reference list intro ------------------------------------------- */
 .mono-list-wrap { font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--slate); }
+
+/* Photographic figures ------------------------------------------- */
+.media { margin: 1.75rem 0; max-width: 40rem; }
+.media img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.media figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--slate);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+/* Low-resolution magnetic grids: show smaller so they stay crisp */
+.media--grid { max-width: 34rem; }
+.media--feature { max-width: 46rem; }
+.media--wide { max-width: none; }

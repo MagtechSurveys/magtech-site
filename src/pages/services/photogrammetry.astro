@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
+import { Image } from 'astro:assets';
+import pitOrtho from '../../assets/goldminepitfromorthosurvey.png';
 ---
 <Base
   title="Drone Photogrammetry & Aerial Imaging | Orthomosaics, 3D Models, Volumetrics | Magtech Surveys"
@@ -29,6 +31,11 @@ import Cta from '../../components/Cta.astro';
           marketing.
         </p>
       </div>
+
+      <figure class="media">
+        <Image src={pitOrtho} alt="High-resolution orthomosaic of an open pit from a drone photogrammetry survey" />
+        <figcaption>Orthomosaic of an open pit from drone photogrammetry, at centimetre ground sample distance.</figcaption>
+      </figure>
 
       <table class="spec">
         <tbody>

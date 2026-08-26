@@ -1,6 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
+import { Image } from 'astro:assets';
+import magComparison from '../../assets/MagtechSurveysComparison.png';
+import magGrid from '../../assets/HighwayRewardRTP.png';
+import baseStation from '../../assets/magbasestation_square.jpg';
 ---
 <Base
   title="Drone Magnetic Surveys Australia | UAV Aeromagnetics | Magtech Surveys"
@@ -23,10 +27,11 @@ import Cta from '../../components/Cta.astro';
         <p>
           We fly the sensor in a towed bird well below the aircraft, away from the platform's own
           magnetic noise. Because the bird hangs beneath the drone, the sensor itself runs much
-          closer to the ground than the aircraft. Sensor height is set per survey by the
-          vegetation and terrain on site: over open ground we have flown production surveys with
-          the sensor as low as 25 metres above ground, while taller canopy naturally sets a
-          higher floor. On small, slow-flown detail areas the sensor can be brought lower again.
+          closer to the ground than the aircraft. Sensor height is set per survey by the target,
+          the terrain and the obstacles on site. Standard production surveys run with the sensor
+          around 25 metres above ground on open sites, while taller canopy sets a higher floor.
+          On small, slow-flown detail areas over clear ground, the sensor can be brought much
+          lower again for maximum near-surface resolution.
           Flight paths are draped to follow the terrain, holding the sensor at a consistent
           height above ground so near-surface targets are resolved evenly across the survey
           rather than fading in and out with elevation.
@@ -39,6 +44,11 @@ import Cta from '../../components/Cta.astro';
           real-time monitoring of flight parameters.
         </p>
       </div>
+
+      <figure class="media media--feature">
+        <Image src={magComparison} alt="Drone magnetic survey grid beside the regional government magnetic grid over the same ground, showing far finer detail" />
+        <figcaption>Left: drone TMI survey. Right: the regional government magnetic grid over the same ground. Same area, tighter line spacing, far more structure resolved.</figcaption>
+      </figure>
 
       <div class="fig-trio">
         <figure>
@@ -82,30 +92,14 @@ import Cta from '../../components/Cta.astro';
           <figcaption><strong>Sensor off the airframe.</strong> The magnetometer rides in a towed bird about 15 m below the drone, clear of platform noise.</figcaption>
         </figure>
 
-        <figure>
-          <svg viewBox="0 0 260 150" role="img" aria-label="Tightly spaced total-field readings gridded into a contoured anomaly">
-            <ellipse cx="130" cy="80" rx="90" ry="52" class="fig-faint"/>
-            <ellipse cx="130" cy="80" rx="64" ry="37" class="fig-faint"/>
-            <ellipse cx="130" cy="80" rx="40" ry="23" class="fig-line" stroke-width="1.2"/>
-            <ellipse cx="130" cy="80" rx="18" ry="11" class="fig-sig" stroke-width="1.4"/>
-            <g class="fig-fill">
-              <circle cx="70" cy="55" r="1.6"/><circle cx="70" cy="72" r="1.6"/><circle cx="70" cy="90" r="1.6"/><circle cx="70" cy="107" r="1.6"/>
-              <circle cx="100" cy="48" r="1.6"/><circle cx="100" cy="68" r="1.6"/><circle cx="100" cy="92" r="1.6"/><circle cx="100" cy="112" r="1.6"/>
-              <circle cx="130" cy="45" r="1.6"/><circle cx="130" cy="68" r="1.6"/><circle cx="130" cy="92" r="1.6"/><circle cx="130" cy="115" r="1.6"/>
-              <circle cx="160" cy="48" r="1.6"/><circle cx="160" cy="68" r="1.6"/><circle cx="160" cy="92" r="1.6"/><circle cx="160" cy="112" r="1.6"/>
-              <circle cx="190" cy="55" r="1.6"/><circle cx="190" cy="72" r="1.6"/><circle cx="190" cy="90" r="1.6"/><circle cx="190" cy="107" r="1.6"/>
-            </g>
-          </svg>
-          <figcaption><strong>Readings become a map.</strong> Tightly spaced readings are levelled and gridded into the anomaly maps your geologist interprets.</figcaption>
-        </figure>
       </div>
 
       <table class="spec">
         <tbody>
           <tr><th scope="row">Sensor</th><td>QuSpin QTFM Gen-2 total-field quantum magnetometer, towed bird</td></tr>
           <tr><th scope="row">Base station</th><td>Proton precession base magnetometer recording on site for diurnal correction</td></tr>
-          <tr><th scope="row">Sensor height</th><td>Set per survey by vegetation and terrain; as low as 25 m above ground achieved on open sites, terrain-draped</td></tr>
-          <tr><th scope="row">Line spacing</th><td>10&ndash;100 m traverse lines with tie lines; orientation set to cross geological strike, commonly N&ndash;S in WA</td></tr>
+          <tr><th scope="row">Sensor height</th><td>Set per survey by target, terrain and obstacles; around 25 m on open production sites, lower again on small clear detail areas. Terrain-draped.</td></tr>
+          <tr><th scope="row">Line spacing</th><td>10&ndash;100 m traverse lines with tie lines; orientation set to cross the local geological strike</td></tr>
           <tr><th scope="row">Processing</th><td>Diurnal correction, heading error correction, IGRF removal, tie-line levelling, microlevelling, RTP, 1VD</td></tr>
           <tr><th scope="row">Deliverables</th><td>Geosoft GRD grids, GeoTIFFs, georeferenced PDF maps, line data, data dictionary and survey report. GDA2020.</td></tr>
         </tbody>
@@ -122,22 +116,32 @@ import Cta from '../../components/Cta.astro';
         </p>
       </div>
 
+      <figure class="media">
+        <Image src={magGrid} alt="Reduced-to-pole magnetic grid from a drone survey, showing resolved structural detail" />
+        <figcaption>Reduced-to-pole grid from a drone magnetic survey. Structural trends and anomalies resolved at survey line spacing.</figcaption>
+      </figure>
+
+      <figure class="media">
+        <Image src={baseStation} width={1300} alt="Proton precession base station magnetometer set up beside the survey vehicle for diurnal correction" />
+        <figcaption>The base station records the diurnal field on site for the duration of each survey, correcting the towed-sensor data for daily variation.</figcaption>
+      </figure>
+
       <h2>Where it fits</h2>
       <div class="prose">
         <p>
-          Drone magnetics is at its best on programs of roughly 1 to 50 square kilometres:
+          Drone magnetics suits everything from a single prospect to broad regional programs:
           first-pass coverage of new tenements, infill over targets identified in regional data,
           and detailed structural mapping ahead of drilling. Production is typically 150 to 230
           line-kilometres per day depending on line spacing, terrain and crewing, and we quote a
-          realistic rate for each job rather than a single headline figure. Below this range ground magnetics may be more
-          economical; above it, manned aircraft start to win on cost per line-kilometre. We will
-          tell you plainly which side of that line your project sits on.
+          realistic rate for each job rather than a single headline figure. We are happy to
+          talk through where drone survey, ground magnetics or a manned aircraft is the right
+          tool for your program, and we will tell you plainly if it is not us.
         </p>
       </div>
       <p class="prose"><a href="/technology/">More on the QTFM Gen-2 and our platform &rarr;</a></p>
     </div>
   </section>
-  <Cta heading="Planning a magnetic survey?" body="Send us your tenement outline and target line spacing. We will come back with a fixed, itemised quote including mobilisation as a separate line." />
+  <Cta heading="Planning a magnetic survey?" body="Send us your tenement outline and target line spacing, and we will come back with a fixed, itemised quote." />
 
 <style>
   .fig-trio {
