@@ -1,0 +1,13 @@
+# Old Readymag URLs -> new Astro pages (301 permanent)
+/tech                    /technology/                 301
+/tech/                   /technology/                 301
+/environmental-monitoring   /services/environmental/  301
+/environmental-monitoring/  /services/environmental/  301
+/photogrammetry          /services/photogrammetry/    301
+/photogrammetry/         /services/photogrammetry/    301
+/magnetic-surveying      /services/magnetics/         301
+/magnetic-surveying/     /services/magnetics/         301
+/about-us                /about/                      301
+/about-us/               /about/                      301
+/services                /                            301
+/services/               /                            301
