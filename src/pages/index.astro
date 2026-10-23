@@ -13,26 +13,23 @@ import { getCollection } from 'astro:content';
 const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year - a.data.year);
 ---
 <Base
-  title="Drone Magnetic Surveys, LiDAR & Photogrammetry | Magtech Surveys, Perth WA"
-  description="High-resolution drone magnetic, LiDAR and photogrammetry surveys for mineral exploration and environmental projects across Australia. Planned, flown and processed in-house. Perth-based, servicing all states."
+  title="Drone Magnetic, LiDAR & Photogrammetry Surveys | Magtech Surveys, Perth WA"
+  description="High-resolution drone magnetic, LiDAR and photogrammetry surveys for resource and environmental projects across Australia. Planned, flown and processed in-house. Perth-based, servicing all states."
 >
   <section class="hero">
     <Image class="hero-bg" src={heroBg} width={2560} alt="" aria-hidden="true" />
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">UAV GEOPHYSICS &middot; PERTH, WESTERN AUSTRALIA</p>
-      <h1>Magnetic data at a resolution manned aircraft can't fly.</h1>
+      <p class="eyebrow">UAV SURVEY &middot; PERTH, WESTERN AUSTRALIA</p>
+      <h1>Know your ground.</h1>
       <p class="hero-lede">
-        We fly quantum-sensor drone magnetic surveys, LiDAR and photogrammetry for mineral
-        exploration and environmental projects across Australia. Low, slow and tightly spaced.
-        Every survey is planned, flown and processed in-house, and every dataset is delivered
-        ready for geological interpretation.
+        Specialist drone magnetics, LiDAR and photogrammetry for resource and environmental
+        projects across Australia. Planned, flown and processed in-house.
       </p>
       <div class="hero-specs" role="list">
         <div role="listitem"><span>SENSITIVITY</span>3 pT/&radic;Hz typ.</div>
-        <div role="listitem"><span>SENSOR HEIGHT</span>As low as the site allows</div>
-        <div role="listitem"><span>COVERAGE</span>Up to 230 line-km/day</div>
-        <div role="listitem"><span>SURVEY SIZE</span>Prospect to regional</div>
+        <div role="listitem"><span>LIDAR ACCURACY</span>4 cm vertical @ 150 m</div>
+        <div role="listitem"><span>SURVEY SIZE</span>Prospect to district</div>
         <div role="listitem"><span>CERTIFICATION</span>CASA ReOC</div>
       </div>
       <p class="hero-actions">
@@ -69,8 +66,8 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
         </article>
         <article class="card">
           <Image class="card-img" src={svcEnv} alt="Orthomosaic over vegetated terrain from a drone survey" />
-          <h3>Environmental &amp; thermal</h3>
-          <p>Rehabilitation monitoring, vegetation and canopy mapping, and thermal detection of feral animals. Repeatable survey designs that make successive datasets directly comparable.</p>
+          <h3>Environmental surveys</h3>
+          <p>Rehabilitation monitoring, vegetation and canopy mapping, erosion assessment. Thermal and multispectral when the job needs them. Repeatable survey designs that make successive datasets directly comparable.</p>
           <a class="card-link" href="/services/environmental/">Environmental &rarr;</a>
         </article>
       </div>
@@ -102,7 +99,7 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
         </div>
         <div>
           <h3>Right-sized for your project</h3>
-          <p>Manned aircraft carry a heavy mobilisation cost that makes smaller programs expensive per line-kilometre. We are priced to work from a single prospect up to broad regional coverage.</p>
+          <p>Manned aircraft carry a heavy mobilisation cost that makes smaller programs expensive per line-kilometre. We are priced to work from a single prospect up to district-scale programs.</p>
         </div>
         <div>
           <h3>Honest data, disclosed limits</h3>
@@ -118,7 +115,7 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
       <h2>Who we work with</h2>
       <div class="audience-grid">
         <div>
-          <h3>Mineral exploration &amp; resources</h3>
+          <h3>Resources</h3>
           <p>
             Aeromagnetic surveys for greenfields reconnaissance, lithological and structural
             mapping, and detailed prospect definition. LiDAR and photogrammetry support
@@ -129,9 +126,8 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
           <h3>Environmental &amp; land management</h3>
           <p>
             Vegetation structure and canopy height mapping, bare-earth terrain models beneath
-            canopy, orthomosaics for baseline assessment, and thermal imagery for wildlife
-            survey, feral animal detection and rehabilitation monitoring. Repeatable designs
-            give quantitative evidence of change over time.
+            canopy, and orthomosaics for baseline assessment and rehabilitation monitoring.
+            Repeatable designs give quantitative evidence of change over time.
           </p>
         </div>
         <div>
@@ -145,7 +141,8 @@ const studies = (await getCollection('caseStudies')).sort((a, b) => b.data.year 
       </div>
       <p class="prose">
         Where a project sits outside these examples, we can usually advise whether drone-based
-        survey is the right tool and what it can realistically deliver.
+        survey is the right tool and what it can realistically deliver. Bathymetric LiDAR,
+        hyperspectral and other less common sensors can be hired in for a project.
       </p>
     </div>
   </section>
